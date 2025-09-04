@@ -1,0 +1,19 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>Redirecting…</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<script>
+// Preserve path, ?query (incl. ?t=TOKEN), and #hash
+const target = new URL(
+  window.location.pathname + window.location.search + window.location.hash,
+  "https://ipsa.vercel.app"
+);
+location.replace(target.href);   // use replace() so Back doesn't return to the redirect page
+</script>
+
+<noscript>
+  <!-- Fallback if JS is disabled (won't preserve query/hash) -->
+  <meta http-equiv="refresh" content="0; url=https://ipsa.vercel.app">
+  <a href="https://ipsa.vercel.app">Continue</a>
+</noscript>
